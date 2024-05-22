@@ -12,13 +12,11 @@ body {
 .container {
     text-align: center;
     background: #fff;
-    padding: 10px;  /* Adjusted padding */
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     overflow: auto;
-    position: relative;
-    width: 90vw;   /* Adjusted width */
-    max-width: 600px;
+    position: relative; /* Make container position relative */
 }
 
 h1 {
@@ -29,15 +27,14 @@ h1 {
 .canvas-container {
     position: relative;
     display: inline-block;
-    width: 100%;
-    height: auto;
+    overflow: auto;
+    max-width: 90vw;
+    max-height: 60vh;
     border: 1px solid #ddd;
     border-radius: 4px;
 }
 
 canvas {
-    width: 100%;
-    height: auto;
     cursor: crosshair;
 }
 
@@ -46,7 +43,7 @@ canvas {
     width: 15px;
     height: 15px;
     background: #007BFF;
-    bottom: 10px;
+    bottom: 40px; /* Adjust according to your needs to avoid overlapping with controls */
     right: 10px;
     cursor: se-resize;
 }
