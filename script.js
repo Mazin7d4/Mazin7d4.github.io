@@ -18,14 +18,6 @@ const offScreenCtx = offScreenCanvas.getContext('2d');
 offScreenCanvas.width = canvas.width;
 offScreenCanvas.height = canvas.height;
 
-function getTouchPos(canvas, touchEvent) {
-    const rect = canvas.getBoundingClientRect();
-    return {
-        x: touchEvent.touches[0].clientX - rect.left,
-        y: touchEvent.touches[0].clientY - rect.top
-    };
-}
-
 function startPosition(e) {
     painting = true;
     draw(e);
@@ -39,16 +31,9 @@ function endPosition() {
 function draw(e) {
     if (!painting) return;
 
-    let x, y;
-    if (e.touches) {
-        const touchPos = getTouchPos(canvas, e);
-        x = touchPos.x;
-        y = touchPos.y;
-    } else {
-        const rect = canvas.getBoundingClientRect();
-        x = e.clientX - rect.left;
-        y = e.clientY - rect.top;
-    }
+    const rect = canvas.getBoundingClientRect();
+    const x = (e.clientX || e.touches[0].clientX) - rect.left;
+    const y = (e.clientY || e.touches[0].clientY) - rect.top;
 
     ctx.lineWidth = brushSize.value;
     ctx.lineCap = 'round';
@@ -72,16 +57,9 @@ function draw(e) {
 canvas.addEventListener('mousedown', startPosition);
 canvas.addEventListener('mouseup', endPosition);
 canvas.addEventListener('mousemove', draw);
-
-canvas.addEventListener('touchstart', (e) => {
-    e.preventDefault();
-    startPosition(e);
-});
+canvas.addEventListener('touchstart', startPosition);
 canvas.addEventListener('touchend', endPosition);
-canvas.addEventListener('touchmove', (e) => {
-    e.preventDefault();
-    draw(e);
-});
+canvas.addEventListener('touchmove', draw);
 
 clearButton.addEventListener('click', () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -93,13 +71,6 @@ resizeHandle.addEventListener('mousedown', (e) => {
     lastX = e.clientX;
     lastY = e.clientY;
     e.preventDefault();
-});
-
-resizeHandle.addEventListener('touchstart', (e) => {
-    e.preventDefault();
-    resizing = true;
-    lastX = e.touches[0].clientX;
-    lastY = e.touches[0].clientY;
 });
 
 window.addEventListener('mousemove', (e) => {
