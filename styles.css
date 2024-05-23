@@ -16,7 +16,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     overflow: auto;
-    position: relative; /* Make container position relative */
+    position: relative;
 }
 
 h1 {
@@ -43,7 +43,7 @@ canvas {
     width: 15px;
     height: 15px;
     background: #007BFF;
-    bottom: 40px; /* Adjust according to your needs to avoid overlapping with controls */
+    bottom: 40px;
     right: 10px;
     cursor: se-resize;
 }
