@@ -1,5 +1,5 @@
 ## Getting Started
-To use, [simply open the hosted app in your web browser.](https://funny-rabanadas-0f5f32.netlify.app/). You can start drawing immediately without any setup required.
+To use, simply [open the hosted app in your web browser.](https://funny-rabanadas-0f5f32.netlify.app/). You can start drawing immediately without any setup required.
 
 Work in progress, only works on desktop. 
 
