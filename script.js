@@ -66,7 +66,7 @@ clearButton.addEventListener('click', () => {
 
 saveButton.addEventListener('click', () => {
     const link = document.createElement('a');
-    link.download = 'drawing.png'; // You can change the file extension to 'jpg' if you want JPG format
+    link.download = 'drawing.png'; //change the file extension to 'jpg' if you want JPG format
     link.href = canvas.toDataURL('image/png'); // Change 'image/png' to 'image/jpeg' for JPG format
     link.click();
 });
