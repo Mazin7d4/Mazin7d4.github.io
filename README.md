@@ -1,7 +1,8 @@
 ## Try it here
 
 The site is live [Here](https://funny-rabanadas-0f5f32.netlify.app/)
-Work in progress
+
+Work in progress, only works on desktop. 
 
 ## Paint Web App
 Welcome to the Paint Web App! This simple yet powerful app allows you to unleash your creativity by painting on a digital canvas. With various features such as color selection, brush size adjustment, and the ability to save your creations.
