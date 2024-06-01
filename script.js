@@ -3,6 +3,7 @@ const ctx = canvas.getContext('2d');
 const colorPicker = document.getElementById('colorPicker');
 const brushSize = document.getElementById('brushSize');
 const clearButton = document.getElementById('clearButton');
+const saveButton = document.getElementById('saveButton');
 const resizeHandle = document.getElementById('resizeHandle');
 
 canvas.width = window.innerWidth * 0.8;
@@ -12,7 +13,7 @@ let painting = false;
 let resizing = false;
 let lastX, lastY;
 
-// Create an off-screen canvas to store the drawing history
+//off-screen canvas to store the drawing history
 const offScreenCanvas = document.createElement('canvas');
 const offScreenCtx = offScreenCanvas.getContext('2d');
 offScreenCanvas.width = canvas.width;
@@ -63,6 +64,13 @@ clearButton.addEventListener('click', () => {
     offScreenCtx.clearRect(0, 0, offScreenCanvas.width, offScreenCanvas.height);
 });
 
+saveButton.addEventListener('click', () => {
+    const link = document.createElement('a');
+    link.download = 'drawing.png'; // You can change the file extension to 'jpg' if you want JPG format
+    link.href = canvas.toDataURL('image/png'); // Change 'image/png' to 'image/jpeg' for JPG format
+    link.click();
+});
+
 resizeHandle.addEventListener('mousedown', (e) => {
     resizing = true;
     lastX = e.clientX;
@@ -78,7 +86,7 @@ window.addEventListener('mousemove', (e) => {
         const newWidth = Math.max(canvas.width + dx, 1);
         const newHeight = Math.max(canvas.height + dy, 1);
 
-        // Create a temporary canvas to store the off-screen canvas content
+        //a temporary canvas to store the off-screen canvas content
         const tempCanvas = document.createElement('canvas');
         const tempCtx = tempCanvas.getContext('2d');
         tempCanvas.width = Math.max(newWidth, offScreenCanvas.width);
