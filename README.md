@@ -1,6 +1,5 @@
-## Try it here
-
-The site is live [Here](https://funny-rabanadas-0f5f32.netlify.app/)
+## Getting Started
+To use, [simply open the hosted app in your web browser.](https://funny-rabanadas-0f5f32.netlify.app/). You can start drawing immediately without any setup required.
 
 Work in progress, only works on desktop. 
 
@@ -18,8 +17,6 @@ Clear Canvas: Easily clear the canvas to start a new masterpiece.
 
 Save Your Artwork: Save your creations as PNG files to share or print them later.
 
-## Getting Started
-To use, [simply open the hosted app in your web browser.](https://funny-rabanadas-0f5f32.netlify.app/). You can start drawing immediately without any setup required.
 
 ## Usage
 Drawing: Click and drag your mouse on the canvas to draw.
@@ -34,7 +31,10 @@ Save Artwork: Click the "Save" button to download your drawing as a PNG file.
 
 ## Screenshots
 
+![ChangeColor](RGB.png)
+
 ![Screenshot](Screenshot.png)
+
 
 ## Installation
 
